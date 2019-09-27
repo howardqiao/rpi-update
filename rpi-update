@@ -59,7 +59,7 @@ if command -v vcgencmd > /dev/null; then
 fi
 
 # Always follow redirects
-CURL_OPTIONS="${CURL_OPTIONS} -L"
+CURL_OPTIONS="${CURL_OPTIONS} --connect-timeout 600 -m 7200 -L"
 
 # Support for custom GitHub Auth Tokens
 if [[ -n "${GITHUB_API_TOKEN}" ]]; then
